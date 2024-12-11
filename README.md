@@ -8,8 +8,8 @@ A Magisk module for systemless integration of zsh in Android, enhancing your ter
 - Reboot your device
 ---
 ## Zshrc
-- custom `.zshrc` can be loaded from internal storage at `/sdcard/.zshrc`.
-- The module includes a **pre-configured `.zshrc`** by default, which gets copied to your internal storage during installation. You can edit this file to add your own custom logic or terminal customizations.
+- custom `.zshrc` can be loaded from internal storage at `/sdcard/.zshrc`
+- The module includes a **pre-configured `.zshrc`** by default, which gets copied to your internal storage during installation. You can edit this file to add your own custom logic or terminal customizations
 ---
 ## Credits
 
