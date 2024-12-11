@@ -1,5 +1,6 @@
 # zsh-for-android
-A Magisk module for systemless integration of zsh in Android, enhancing your terminal experience 
+
+- Magisk module for systemless integration of zsh in Android, enhancing your terminal experience 
 ---
 ## Installation
 - Flash these two modules in `Magisk` , `KernelSU` or `Apatch`
