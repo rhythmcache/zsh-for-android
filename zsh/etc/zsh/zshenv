@@ -13,13 +13,13 @@
 # Global Order: zshenv, zprofile, zshrc, zlogin
 
 # Set user based on UID
-export USER=$(id -u -eq 0 && echo "root" || echo "system")
+export USER=$([[ "$(print -P "%#")" == '#' ]] && print 'root' || print 'system')
 
 # Home directory
 export HOME=/sdcard
 
 # Dynamically set HOST to Android codename and ANDROID_ROOT
-export HOST=$(getprop ro.build.version.codename)  # Fetches Android codename
+export HOST="android"
 export ANDROID_ROOT=/
 
 # Android-specific directories
