@@ -1,17 +1,30 @@
-# coldnw.t.me
+# .zshrc for android by coldnw.t.me
+# github.com/rhythmcache
 # Load colors
 autoload -U colors && colors
 
 # Custom color variables
 local android_codename=$(getprop ro.product.device)  # Hardcode if getprop is unreliable
 local current_user="${USER:-$(whoami)}"
-local user_host="%{$fg_bold[red]%}${current_user}@${android_codename}%{$reset_color%}"
+
+# Conditional coloring for non-root users
+if [[ $EUID -ne 0 ]]; then
+    local user_color="%{$fg_bold[green]%}"  # Green for non-root
+    local arrow_color="%{$fg_bold[blue]%}"  # Blue for non-root
+    local symbol_color="%{$fg_bold[green]%}"  # Green for non-root
+else
+    local user_color="%{$fg_bold[red]%}"  # Red for root
+    local arrow_color="%{$fg_bold[red]%}"  # Red for root
+    local symbol_color="%{$fg_bold[red]%}"  # Red for root
+fi
+
+local user_host="${user_color}${current_user}@${android_codename}%{$reset_color%}"
 local current_dir="%{$fg_bold[blue]%}%~%{$reset_color%}"
 
 # Prompt symbol and arrow styling
-local prompt_arrows="%{$fg_bold[red]%}❯❯❯%{$reset_color%}"
-local prompt_symbol="%{$fg_bold[red]%}#%{$reset_color%}"  # Default for root
-[[ $EUID -ne 0 ]] && prompt_symbol="%{$fg_bold[green]%}$%{$reset_color%}"
+local prompt_arrows="${arrow_color}❯❯❯%{$reset_color%}"
+local prompt_symbol="${symbol_color}#%{$reset_color%}"  # Default for root
+[[ $EUID -ne 0 ]] && prompt_symbol="${symbol_color}$%{$reset_color%}"
 
 # Stylish prompt with emojis and colors
 PROMPT=$'\n'"╭─${user_host} in ${current_dir}"$'\n'"╰─${prompt_arrows}${prompt_symbol} "
