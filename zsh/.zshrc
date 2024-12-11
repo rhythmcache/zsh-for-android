@@ -4,7 +4,7 @@ autoload -U colors && colors
 
 # Custom color variables
 local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
-local android_codename="$(getprop ro.build.version.codename)"
+local android_codename="$(getprop ro.product.device)"
 local current_user="%n"  # Get the current username
 local user_host="%{$fg_bold[cyan]%}${current_user}@${android_codename}%{$reset_color%}"
 local current_dir="%{$fg_bold[blue]%}%~%{$reset_color%}"
