@@ -1,4 +1,4 @@
-# /etc/zsh/zshenv: system-wide .zshenv file for zsh(1).
+# /etc/zsh/zshenv: system-wide .zshenv file for zsh.
 #
 # This file is sourced on all invocations of the shell.
 # If the -f flag is present or if the NO_RCS option is
@@ -11,18 +11,35 @@
 # output or assume the shell is attached to a tty.
 #
 # Global Order: zshenv, zprofile, zshrc, zlogin
-export USER=$([[ "$(print -P "%#")" == '#' ]] && print 'root' || print 'system')
+
+# Set user based on UID
+export USER=$(id -u -eq 0 && echo "root" || echo "system")
+
+# Home directory
 export HOME=/sdcard
-export HOST="android"
+
+# Dynamically set HOST to Android codename and ANDROID_ROOT
+export HOST=$(getprop ro.build.version.codename)  # Fetches Android codename
 export ANDROID_ROOT=/
+
+# Android-specific directories
 export ANDROID_DATA=/data
+
+# Locale settings
 export LC_ALL="C"
 export LANGUAGE="C"
 export LOGNAME=$USER
+
+# Shell settings
 export SHELL=zsh
+
+# History settings
 export HISTFILE=${HOME}/.zsh_history
+setopt HIST_FCNTL_LOCK  # Lock history file for safety
+
+# Terminal settings
 export TERMINFO=/system/usr/share/terminfo
 export TERM=xterm-256color
+
+# Temporary files directory
 export TMPPREFIX=${HOME}/tmp
-# Needed for history file saving on /sdcard
-setopt HIST_FCNTL_LOCK
