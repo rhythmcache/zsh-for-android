@@ -20,7 +20,7 @@ cp -r "$MODPATH/zsh/usr"/* "$MODPATH/system/usr" || { ui_print "Failed to copy u
 cp "$MODPATH/zsh/.zshrc" "/sdcard" || { ui_print "Failed to copy .zshrc to /sdcard"; exit 1; }
 cp "/system/etc/mkshrc" "$MODPATH/system/etc"
 echo "exec zsh" >> "$MODPATH/system/etc/mkshrc"
-cp "$MODPATH/module.prop" "$MODPATH" || { ui_print "Failed to copy module.prop"; exit 1; }
+rm -r "$MODPATH/zsh"
 
 # Setting permissions
 ui_print "Installing..."
@@ -29,5 +29,7 @@ set_perm_recursive "$MODPATH/system/bin" 0 0 0755 0755 || { ui_print "Failed to 
 set_perm_recursive "$MODPATH/system/usr" 0 0 0755 0644 || { ui_print "Failed to set permissions for $MODPATH/system/usr"; exit 1; }
 set_perm_recursive "$MODPATH/system/etc" 0 0 0755 0644 || { ui_print "Failed to set permissions for $MODPATH/system/etc"; exit 1; }
 
+ui_print "installtion complete"
+ui_print "make sure ncurses is installed"
 ui_print " [*] Done!"
 ui_print ""
