@@ -6,7 +6,8 @@
 - Flash these two modules in `Magisk` , `KernelSU` or `Apatch`
 - [ncurses-for-android](https://github.com/rhythmcache/zsh-for-android/releases/download/V1/ncursesw-for-android.zip)
 - [zsh-for-android](https://github.com/rhythmcache/zsh-for-android/releases/download/V1/zsh-for-android.zip)
-- Reboot your device
+- Installation may take some time
+- Reboot your device after installation is complete।
 ---
 ## Zshrc
 - custom `.zshrc` can be loaded from internal storage at `/sdcard/.zshrc`
@@ -14,7 +15,7 @@
 ---
 ## Credits
 
-- [@zackptg5](https://github.com/Zackptg5) for `ncurses` and `zsh` binaries
+- [@zackptg5](https://github.com/Zackptg5) for `ncurses` and `zsh` cross compiled binaries
 
   
 
