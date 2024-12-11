@@ -3,4 +3,4 @@ name=ZSH for Android
 version=1.0
 versionCode=1
 author=coldnw.t.me
-description=systemless implementation of zsh on android
+description=Magisk module for systemless integration of zsh in Android, enhancing your terminal experience
