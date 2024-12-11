@@ -1,17 +1,20 @@
+# coldnw.t.me
 # Load colors
-#by @rhythmcache
 autoload -U colors && colors
 
 # Custom color variables
-local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
-local android_codename="$(getprop ro.product.device)"
-local current_user="%n"  # Get the current username
-local user_host="%{$fg_bold[cyan]%}${current_user}@${android_codename}%{$reset_color%}"
+local android_codename=$(getprop ro.product.device)  # Hardcode if getprop is unreliable
+local current_user="${USER:-$(whoami)}"
+local user_host="%{$fg_bold[red]%}${current_user}@${android_codename}%{$reset_color%}"
 local current_dir="%{$fg_bold[blue]%}%~%{$reset_color%}"
-local git_branch='$(git_prompt_info)'
+
+# Prompt symbol and arrow styling
+local prompt_arrows="%{$fg_bold[red]%}❯❯❯%{$reset_color%}"
+local prompt_symbol="%{$fg_bold[red]%}#%{$reset_color%}"  # Default for root
+[[ $EUID -ne 0 ]] && prompt_symbol="%{$fg_bold[green]%}$%{$reset_color%}"
 
 # Stylish prompt with emojis and colors
-PROMPT=$'\n'"╭─${ret_status} ${user_host} in ${current_dir}"$'\n'"╰─%{$fg_bold[magenta]%}❯%{$fg_bold[cyan]%}❯%{$fg_bold[green]%}❯%{$reset_color%} "
+PROMPT=$'\n'"╭─${user_host} in ${current_dir}"$'\n'"╰─${prompt_arrows}${prompt_symbol} "
 
 # Right-side prompt showing time
 RPROMPT="%{$fg_bold[yellow]%}[%*]%{$reset_color%}"
@@ -88,9 +91,8 @@ lsd() {
     ls -la "$@" | grep "^l"
 }
 
-
 # Welcome message
-echo "${fg_bold[cyan]}Welcome back, $USER!${reset_color}"
+echo "${fg_bold[red]}Welcome back, $USER!${reset_color}"
 echo "${fg_bold[yellow]}$(date '+%A, %B %d, %Y %H:%M:%S')${reset_color}"
 echo "${fg_bold[green]}Terminal ready...${reset_color}\n"
 
