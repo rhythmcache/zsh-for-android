@@ -8,7 +8,7 @@ Magisk module for Systsemless Integration of `zsh` in android for better termina
 
 ## Credits
 
-- @zackptg5 for ncurses and zsh binaries
+- [@zackptg5](https://github.com/Zackptg5) for `ncurses` and `zsh` binaries
 
   
 
