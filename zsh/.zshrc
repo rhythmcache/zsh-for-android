@@ -78,29 +78,6 @@ man() {
     man "$@"
 }
 
-# Enhanced extract function with colors
-extract() {
-    if [ -f $1 ]; then
-        case $1 in
-            *.tar.bz2)   echo "🎯 Extracting $1..." && tar xjf $1     ;;
-            *.tar.gz)    echo "🎯 Extracting $1..." && tar xzf $1     ;;
-            *.bz2)       echo "🎯 Extracting $1..." && bunzip2 $1     ;;
-            *.rar)       echo "🎯 Extracting $1..." && unrar e $1     ;;
-            *.gz)        echo "🎯 Extracting $1..." && gunzip $1      ;;
-            *.tar)       echo "🎯 Extracting $1..." && tar xf $1      ;;
-            *.tbz2)      echo "🎯 Extracting $1..." && tar xjf $1     ;;
-            *.tgz)       echo "🎯 Extracting $1..." && tar xzf $1     ;;
-            *.zip)       echo "🎯 Extracting $1..." && unzip $1       ;;
-            *.Z)         echo "🎯 Extracting $1..." && uncompress $1  ;;
-            *.7z)        echo "🎯 Extracting $1..." && 7z x $1        ;;
-            *)          echo "❌ '$1' cannot be extracted via extract()" ;;
-        esac
-        echo "✅ Extraction complete!"
-    else
-        echo "❌ '$1' is not a valid file"
-    fi
-}
-
 # Colorful directory listing
 lsd() {
     echo "\n📁 ${fg_bold[cyan]}Directories:${reset_color}"
@@ -111,19 +88,6 @@ lsd() {
     ls -la "$@" | grep "^l"
 }
 
-# Key bindings
-bindkey "^[[A" history-search-backward
-bindkey "^[[B" history-search-forward
-bindkey "^[[1;5C" forward-word
-bindkey "^[[1;5D" backward-word
-bindkey "^H" backward-delete-char
-bindkey "^[[3~" delete-char
-bindkey "^A" beginning-of-line
-bindkey "^E" end-of-line
-bindkey "^K" kill-line
-bindkey "^U" kill-whole-line
-bindkey "^W" backward-kill-word
-bindkey "^Y" yank
 
 # Welcome message
 echo "${fg_bold[cyan]}Welcome back, $USER!${reset_color}"
