@@ -18,7 +18,8 @@
 - [@zackptg5](https://github.com/Zackptg5) for `ncurses` and `zsh` cross compiled binaries
 - [@topjohnwu](https://github.com/topjohnwu) - Magisk Developer
 
-  
+  ---
+  [![Telegram](https://img.shields.io/badge/Telegram-Join%20Chat-blue?style=flat-square&logo=telegram)](https://t.me/ximistuffschat)
 
 
 
