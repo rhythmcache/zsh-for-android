@@ -27,7 +27,7 @@ rm -r "$MODPATH/zsh"
 # Setting permissions
 ui_print " > > Installing..."
 ui_print " > > Setting Permissions"
-set_perm_recursive "$MODPATH/system/bin" 0 0 0755 0755 || { ui_print "Failed to set permissions for $MODPATH/system/bin"; exit 1; }
+set_perm_recursive "$MODPATH/system/bin" 0 0 0755 0777 || { ui_print "Failed to set permissions for $MODPATH/system/bin"; exit 1; }
 set_perm_recursive "$MODPATH/system/usr" 0 0 0755 0644 || { ui_print "Failed to set permissions for $MODPATH/system/usr"; exit 1; }
 set_perm_recursive "$MODPATH/system/etc" 0 0 0755 0644 || { ui_print "Failed to set permissions for $MODPATH/system/etc"; exit 1; }
 
