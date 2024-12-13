@@ -13,6 +13,13 @@
 - custom `.zshrc` can be loaded from internal storage at `/sdcard/.zshrc`
 - The module includes a **pre-configured `.zshrc`** by default, which gets copied to your internal storage during installation. You can edit this file to add your own custom logic or terminal customizations
 ---
+- Default Interface
+```
+╭─system@peux in /
+╰─❯❯❯$ su                                                   
+╭─root@peux in /
+╰─❯❯❯#
+```
 ## Credits
 
 - [@zackptg5](https://github.com/Zackptg5) for `ncurses` and `zsh` cross compiled binaries
