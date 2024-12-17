@@ -20,6 +20,7 @@
 ╭─root@peux in /
 ╰─❯❯❯#
 ```
+(peux) will be replaced by your device codename
 ##### Termux
 - `Termux`  uses its own shell environment that is independent of the default Android shell. if you use termux and you want to make these changes apply also in `Termux` you'll need to make additional changes for it to apply within Termux.
 - Run this command in `termux`
