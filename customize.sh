@@ -19,7 +19,7 @@ ui_print " > > Copying binaries"
 cp -r "$MODPATH/zsh/$arch"/* "$MODPATH/system/bin" || { ui_print "Failed to copy binaries for $arch"; exit 1; }
 cp -r "$MODPATH/zsh/etc"/* "$MODPATH/system/etc" || { ui_print "Failed to copy etc files"; exit 1; }
 cp -r "$MODPATH/zsh/usr"/* "$MODPATH/system/usr" || { ui_print "Failed to copy usr files"; exit 1; }
-cp "$MODPATH/zsh/.zshrc" "/data/local" || { ui_print "Failed to copy .zshrc to /sdcard"; exit 1; }
+cp "$MODPATH/zsh/.zshrc" "/data/local" || { ui_print "Failed to copy .zshrc to /data/local"; exit 1; }
 cp "/system/etc/mkshrc" "$MODPATH/system/etc"
 echo "exec zsh" >> "$MODPATH/system/etc/mkshrc"
 rm -r "$MODPATH/zsh"
