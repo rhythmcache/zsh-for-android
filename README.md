@@ -5,7 +5,7 @@
 ## Installation
 - Flash these two modules in `Magisk` , `KernelSU` or `Apatch`
 - [ncurses-for-android](https://github.com/rhythmcache/zsh-for-android/releases/download/V1/ncursesw-for-android.zip)
-- [zsh-for-android](https://github.com/rhythmcache/zsh-for-android/releases/download/V1/zsh-for-android.zip)
+- [zsh-for-android](https://github.com/rhythmcache/zsh-for-android/releases/download/V2/zsh-for-android.zip)
 - Installation may take some time
 - Reboot your device after installation is complete।
 ---
