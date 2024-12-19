@@ -10,7 +10,7 @@
 - Reboot your device after installation is complete।
 ---
 ## Zshrc
-- custom `.zshrc` can be loaded from internal storage at `/data/local/.zshrc`
+- custom `.zshrc` can be loaded from `/data/local/.zshrc`
 - The module includes a **pre-configured `.zshrc`** by default, which gets copied to your internal storage during installation. You can edit this file to add your own custom logic or terminal customizations
 ---
 - Default Interface
