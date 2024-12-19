@@ -16,7 +16,7 @@
 export USER=$([[ "$(print -P "%#")" == '#' ]] && print 'root' || print 'system')
 
 # Home directory
-export HOME=/sdcard
+export HOME="/data/local"
 
 # Dynamically set HOST to Android codename and ANDROID_ROOT
 export HOST="android"
