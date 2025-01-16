@@ -1,6 +1,6 @@
 {
     "versionCode": 3,
-    "version": "3.0",
+    "version": "3.0 (3-a638eb8-release)",
     "zipUrl": "https://github.com/rhythmcache/zsh-for-android/releases/download/V3/zsh-for-android-v3.zip",
     "changelog": "https://raw.githubusercontent.com/rhythmcache/zsh-for-android/main/changelog.md"
 }
