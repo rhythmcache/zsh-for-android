@@ -1,4 +1,4 @@
-# .zshrc for android by coldnw.t.me
+# .zshrc for android by rhythmcache.t.me
 # github.com/rhythmcache
 # Load colors
 autoload -U colors && colors
@@ -129,7 +129,7 @@ lsd() {
     ls -la "$@" | grep "^l"
 }
 
-# Welcome message
+# Welcome message ( disabled it ,, it was cringe )
 #echo "${fg_bold[red]}Welcome back, $USER!${reset_color}"
 #echo "${fg_bold[yellow]}$(date '+%A, %B %d, %Y %H:%M:%S')${reset_color}"
 #echo "${fg_bold[green]}Terminal ready...${reset_color}\n"
@@ -223,3 +223,47 @@ appinfo() {
     echo "\n📜 Version Info:"
     dumpsys package "$package" | grep -E "versionName|versionCode"
 }
+
+
+
+# Directly Export Paths with Error Suppression
+export PATH="$PATH:/system/system_ext/bin" 2>/dev/null
+export PATH="$PATH:/system/product/bin" 2>/dev/null
+export PATH="$PATH:/system/vendor/bin" 2>/dev/null
+export PATH="$PATH:/data/data/com.termux/files/usr/bin" 2>/dev/null
+
+
+# Function to check if a command exists directly
+command_exists() {
+    command -v "$1" >/dev/null 2>&1
+}
+
+# Check if busybox exists before proceeding
+if command_exists busybox; then
+    # Create aliases for all busybox commands that don't exist in the environment
+    while IFS= read -r cmd; do
+        if ! command_exists "$cmd"; then
+            alias "$cmd"="busybox $cmd"
+        fi
+    done < <(busybox --list || echo "")
+fi
+
+# Function to execute a command, falling back to busybox if necessary
+try_busybox() {
+    local cmd="$1"  # First argument is the command
+    shift           # Remove the command from the argument list
+
+    if command_exists "$cmd"; then
+        # If the command exists in the system, execute it
+        command "$cmd" "$@"
+    elif command_exists busybox && busybox --list | grep -q "^$cmd$"; then
+        # If it's a busybox applet, execute it via busybox
+        busybox "$cmd" "$@"
+    else
+        # Command is not found in the system or busybox
+        echo "Command not found: $cmd (not available directly or via busybox)" >&2
+        return 127
+    fi
+}
+
+
