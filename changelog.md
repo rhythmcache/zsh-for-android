@@ -1,0 +1,2 @@
+- Added Some Useful Aliases and functions
+- Removed the requirement of ncursew as separate module
