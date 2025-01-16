@@ -11,7 +11,6 @@
 ## Zshrc
 - custom `.zshrc` can be loaded from `/data/local/.zshrc`
 - The module includes a **pre-configured `.zshrc`** by default, which gets copied to the specified location  during installation. You can edit this file to add your own custom logic or terminal customizations
-- you can use `fetch-zshrc` to directly fetch it from the repo.
 ---
 - Default Interface
 ```
