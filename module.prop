@@ -1,6 +1,6 @@
 id=zsh-for-android
 name=ZSH
-version=3.0
+version=3.0 (3-a638eb8-release)
 versionCode=3
 author=rhythmcache.t.me
 description=Magisk module for systemless integration of zsh in Android, enhancing your terminal experience
