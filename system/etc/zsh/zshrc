@@ -5,3 +5,7 @@
 # options, key bindings, etc.
 #
 # Global Order: zshenv, zprofile, zshrc, zlogin
+
+fetch-zshrc() {
+    busybox wget -O $HOME/.zshrc https://raw.githubusercontent.com/rhythmcache/zsh-for-android/main/zsh/.zshrc
+}
