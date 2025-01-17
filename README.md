@@ -4,7 +4,7 @@
 ---
 ## Installation
 - Flash this module in `Magisk` , `KernelSU` or `Apatch`
-- [zsh-for-android](https://github.com/rhythmcache/zsh-for-android/releases/download/V2/zsh-for-android.zip)
+- [zsh-for-android](https://github.com/rhythmcache/zsh-for-android/releases/download/V3/zsh-for-android-v3.zip)
 - Installation may take some time
 - Reboot your device after installation is complete।
 ---
